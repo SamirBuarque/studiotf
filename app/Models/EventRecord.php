@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class EventRecord extends Model
+{
+    /** @use HasFactory<\Database\Factories\EventRecordFactory> */
+    use HasFactory;
+
+    protected $fillable = [
+        "name",
+        "city",
+        "state",
+        "date",
+        "status"
+    ];
+
+    protected $casts = [
+        'date' => 'DD-MM-YYYY'
+    ];
+
+    protected function casts(): array
+    {
+        return [
+            'date' => 'datetime',
+        ];
+    }
+}
