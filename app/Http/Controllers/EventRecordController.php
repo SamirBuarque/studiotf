@@ -8,12 +8,10 @@ use App\Models\EventRecord;
 
 class EventRecordController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $events = EventRecord::all();
+        return response()->json($events);
     }
 
     /**
