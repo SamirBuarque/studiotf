@@ -28,4 +28,8 @@ class EventRecord extends Model
             'date' => 'datetime',
         ];
     }
+
+    public function planning() {
+        return $this->hasMany(Planning::class);
+    }
 }

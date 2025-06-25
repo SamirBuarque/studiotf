@@ -19,7 +19,7 @@ class EventRecordController extends Controller
      */
     public function create()
     {
-        //
+        return view('event_record.create');
     }
 
     /**
@@ -33,14 +33,13 @@ class EventRecordController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(EventRecord $eventRecord)
+    public function show($id)
     {
-        //
+        $event = EventRecord::findOrFail($id);
+        $plannings = $event->planning;
+        return view('event_record.detail', compact('event', 'plannings'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(EventRecord $eventRecord)
     {
         //

@@ -1,11 +1,23 @@
 <?php
 
+use App\Http\Controllers\Api\PlanningController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventRecordController;
 
-Route::middleware(['auth.sanctum'])->group(function() {
-    Route::get('/events', [EventRecordController::class, 'index']);
-    Route::get('/user', function (Request $request) {
-    return $request->user();});
+
+Route::get('/events', [EventRecordController::class, 'index']);
+
+Route::get('/user', function (Request $request) {
+    return $request->user();
 });
+
+Route::get('/{eventRecord}/plannings', [PlanningController::class, 'index']);
+Route::post('/{eventRecord}/plannings', [PlanningController::class, 'store']);
+Route::put('/{eventRecord}/plannings/{planningId}', [PlanningController::class, 'update']);
+Route::delete('/plannings/{planningId}', [PlanningController::class, 'destroy']);
+
+
+
+
+
