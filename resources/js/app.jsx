@@ -3,6 +3,7 @@ import '../css/app.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import PlanningsList from './components/PlanningsList';
+import ProductsList from './components/ProductsList';
 
 const el = document.getElementById('plannings-root');
 if (el) {
@@ -11,6 +12,17 @@ if (el) {
   ReactDOM.createRoot(el).render(
     <React.StrictMode>
       <PlanningsList eventId={eventId} />
+    </React.StrictMode>
+  );
+}
+
+const productsRoot = document.getElementById('products-root');
+if (productsRoot) {
+  const eventId = productsRoot.dataset.eventId;
+
+  ReactDOM.createRoot(productsRoot).render(
+    <React.StrictMode>
+      <ProductsList eventId={eventId} />
     </React.StrictMode>
   );
 }

@@ -69,6 +69,19 @@
     </div>
     </div>
 
+    <div class="row d-flex justify-content-center mt-5">
+      <div class="col-6">
+        <div class="card">
+        <div class="card-title">
+          <h2>Produtos</h2>
+        </div>
+        <div class="card-body">
+          <div id="products-root" data-event-id="{{ $event->id}}"></div>
+        </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
 @endsection
