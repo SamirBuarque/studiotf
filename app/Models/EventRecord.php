@@ -32,4 +32,12 @@ class EventRecord extends Model
     public function planning() {
         return $this->hasMany(Planning::class);
     }
+
+    public function products() {
+        return $this->hasMany(Products::class);
+    }
+
+    public function workers() {
+        return $this->hasMany(Workers::class);
+    }
 }

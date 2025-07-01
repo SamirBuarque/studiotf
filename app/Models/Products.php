@@ -4,12 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Planning extends Model
+class Products extends Model
 {
+
     protected $fillable = [
-        "text",
-        "checked",
-        "completed"
+        "name",
+        "quantity",
+        "checked"
     ];
 
     public function eventRecord() {

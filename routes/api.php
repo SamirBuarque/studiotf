@@ -14,8 +14,8 @@ Route::get('/user', function (Request $request) {
 
 Route::get('/{eventRecord}/plannings', [PlanningController::class, 'index']);
 Route::post('/{eventRecord}/plannings', [PlanningController::class, 'store']);
-Route::put('/{eventRecord}/plannings/{planningId}', [PlanningController::class, 'update']);
-Route::delete('/plannings/{planningId}', [PlanningController::class, 'destroy']);
+Route::put('/{eventRecord}/plannings/{planning}', [PlanningController::class, 'update']);
+Route::delete('/plannings/{planning}', [PlanningController::class, 'destroy']);
 
 
 

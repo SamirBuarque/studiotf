@@ -2,17 +2,18 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Planning extends Model
+class Workers extends Model
 {
+    use HasFactory;
     protected $fillable = [
-        "text",
-        "checked",
-        "completed"
+        "name"
     ];
 
-    public function eventRecord() {
+    public function eventRecord()
+    {
         return $this->belongsTo(EventRecord::class);
     }
 }

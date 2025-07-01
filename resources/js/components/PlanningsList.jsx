@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 export default function PlanningsList({ eventId }) {
+
   const [plannings, setPlannings] = useState([]);
   const [newPlanning, setNewPlanning] = useState("");
 
@@ -40,9 +41,9 @@ export default function PlanningsList({ eventId }) {
     fetchPlannings();
   };
 
-  const toggleChecked = async (id) => {
+  const toggleChecked = async (eventId, planningId) => {
     try {
-      await axios.put(`/api/${eventId}/plannings/${id}`, { checked: !plannings.find(p => p.id === id).checked });
+      await axios.put(`/api/${eventId}/plannings/${planningId}`, { checked: !plannings.find(p => p.id === planningId).checked });
       fetchPlannings();
     } catch (error) {
       console.log("Erro ao atualizar planejamento:", error);
@@ -62,8 +63,8 @@ export default function PlanningsList({ eventId }) {
         {plannings.map(planning => (
           <li key={planning.id} className='list-group-item d-flex justify-content-between align-items-center'>
             <div className='d-flex align-items-center gap-2'>
-              <input type="checkbox" className="form-check-input" id={`planning-${planning.id}`} checked={planning.checked} onChange={() => toggleChecked(planning.id)}></input>
-              <span className={planning.checked ? 'mark' : ''}>{planning.text}</span>
+              <input type="checkbox" className="form-check-input" id={`planning-${planning.id}`} checked={planning.checked} onChange={() => toggleChecked(eventId, planning.id)}></input>
+              <span className={planning.checked ? 'text-decoration-line-through' : ''}>{planning.text}</span>
             </div>
             <button className="btn btn-sm btn-danger" onClick={() => deletePlanning(planning.id)}>X</button>
           </li>
