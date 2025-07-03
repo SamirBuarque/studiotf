@@ -9,7 +9,8 @@ class Workers extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "name"
+        "name",
+        "event_record_id"
     ];
 
     public function eventRecord()
