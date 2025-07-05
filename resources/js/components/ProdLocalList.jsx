@@ -76,6 +76,7 @@ export default function ProdLocalList({ eventId }) {
   return (
     <>
 
+      {/* INÍCIO Sessão dos funcionários envolvidos */}
       <div className="card bg-dark">
         <div className="d-flex align-items-center justify-content-center gap-3 my-3">
           <h3 className="text-white">Envolvidos</h3>
@@ -145,6 +146,11 @@ export default function ProdLocalList({ eventId }) {
           </div>
         )}
       </div>
+      {/* FIM Sessão dos funcionários envolvidos */}
+
+      {/* INÍCIO  */}
+
+
 
     </>
   );
