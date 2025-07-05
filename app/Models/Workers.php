@@ -10,7 +10,13 @@ class Workers extends Model
     use HasFactory;
     protected $fillable = [
         "name",
-        "event_record_id"
+        "event_record_id",
+        "birth_date",
+        "position",
+    ];
+
+    protected $casts = [
+        'birth_date' => 'date'
     ];
 
     public function eventRecord()

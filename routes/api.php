@@ -27,7 +27,7 @@ Route::delete('/products/{product}', [ProductsController::class, 'destroy']);
 //trabalhadores
 Route::get('/{eventRecord}/workers', [WorkersController::class, 'unrelatedWorkers']);
 Route::get('/{eventRecord}/linked-workers', [WorkersController::class,'linkedWorkers']);
-Route::post('/{eventRecord}/workers', [WorkersController::class,'store']);
+Route::post('/{eventRecord}/workers', [WorkersController::class,'linkWorker']);
 Route::put('/unlink-worker', [WorkersController::class,'unlinkWorker']);
 
 
