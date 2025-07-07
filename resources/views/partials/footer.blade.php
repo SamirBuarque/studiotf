@@ -1,5 +1,15 @@
-<footer class="bg-dark py-3 mt-5">
-  <div class="container-fluid">
-    <span class="text-white">Todos os direitos reservados</span>
-  </div>
-</footer>
+@guest
+  <footer class="bg-dark py-3 text-center text-white w-100" style="position: fixed; bottom: 0; left: 0;">
+    <div class="container">
+    <small>&copy; {{ date('Y') }} StudioTF — Todos os direitos reservados</small>
+    </div>
+  </footer>
+@endguest
+
+@auth
+<footer class="bg-dark py-3 text-center text-white w-100">
+    <div class="container">
+    <small>&copy; {{ date('Y') }} StudioTF — Todos os direitos reservados</small>
+    </div>
+  </footer>
+@endauth

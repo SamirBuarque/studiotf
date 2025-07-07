@@ -40,4 +40,8 @@ class EventRecord extends Model
     public function workers() {
         return $this->hasMany(Workers::class);
     }
+
+    public function file() {
+        return $this->hasMany(File::class);
+    }
 }

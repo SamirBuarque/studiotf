@@ -26,12 +26,10 @@
   </style>
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="min-vh-100 d-flex flex-column">
 
   <main class="flex-fill">
-    <div class="container">
-      @yield('content')
-    </div>
+    @yield('content')
   </main>
 
   @include('partials.footer')

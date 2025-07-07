@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventRecordController;
 use App\Http\Controllers\Api\ProductsController;
 use App\Http\Controllers\Api\WorkersController;
+use App\Http\Controllers\FileController;
 
 Route::get('/events', [EventRecordController::class, 'index']);
 
@@ -30,4 +31,8 @@ Route::get('/{eventRecord}/linked-workers', [WorkersController::class,'linkedWor
 Route::post('/{eventRecord}/workers', [WorkersController::class,'linkWorker']);
 Route::put('/unlink-worker', [WorkersController::class,'unlinkWorker']);
 
+//Arquivos
+Route::post('/{eventRecord}/files/upload', [FileController::class, 'upload'])->name('file.upload');
+Route::get('/{eventRecord}/files/view/{fileId}', [FileController::class, 'view'])->name('file.view');
+Route::delete('/{eventRecord}/files/{file}', [FileController::class, 'destroy'])->name('file.destroy');
 

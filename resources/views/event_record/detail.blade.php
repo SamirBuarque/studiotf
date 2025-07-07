@@ -10,8 +10,6 @@
     <div class="d-flex align-items-center justify-content-center col-12 text-uppercase gap-3">
       <h1>{{$event->city}}</h1>
       <span class="text-bold">{{$event->status}}</span>
-      <button type="submit" class="btn btn-danger btn-sm" data-bs-toggle="modal"
-        data-bs-target="#confirmDeleteModal-{{ $event->id }}">Remover</button>
     </div>
 
     <!-- Modal #confirmDeleteModal -->
@@ -51,7 +49,63 @@
       <div class="card-title">
         <h2>Documentos</h2>
       </div>
-      <div class="card-body">Anexar documentos</div>
+      <div class="card-body">
+        <div>
+        <ul class="list-group text-start">
+          @foreach($files as $file)
+        <li class="list-group-item d-flex align-items-center justify-content-between">
+        <span>{{$file->original_name}}</span>
+        <div>
+        <a href="{{ route('file.view', ['eventRecord' => $event, 'fileId' => $file->id])}}"
+        class="btn btn-sm btn-outline-success">Visualizar</a>
+        <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal"
+        data-bs-target="#deleteFileModal-{{ $file->id }}">
+        Excluir
+        </button>
+        </div>
+        </li>
+
+        <!-- Modal de Confirmação -->
+        <div class="modal fade" id="deleteFileModal-{{ $file->id }}" tabindex="-1"
+        aria-labelledby="deleteFileModalLabel-{{ $file->id }}" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteFileModalLabel-{{ $file->id }}">
+          Confirmar Exclusão
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Tem certeza que deseja excluir o arquivo <strong>{{ $file->original_name }}</strong>?
+          <br><small>Esta ação não pode ser desfeita.</small>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <form action="{{ route('file.destroy', ['eventRecord' => $event, 'file' => $file]) }}"
+          method="POST">
+          @csrf
+          @method('DELETE')
+          <button type="submit" class="btn btn-danger">Confirmar Exclusão</button>
+          </form>
+        </div>
+        </div>
+        </div>
+        </div>
+      @endforeach
+        </ul>
+        </div>
+        <form action="{{ route('file.upload', ['eventRecord' => $event]) }}" method="post"
+        enctype="multipart/form-data">
+        @csrf
+        <div class="mb-3">
+          <label for="file" class="form-label">Selecione o arquivo:</label>
+          <input type="file" name="file" id="file" class="form-control" required>
+          <div class="form-text">Formatos aceitos: JPG, PNG, PDF, DOC, DOCX (até 5MB)</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+      </div>
       </div>
     </div>
     </div>
@@ -70,29 +124,36 @@
     </div>
 
     <div class="row d-flex justify-content-center mt-5">
-      <div class="col-6">
-        <div class="card">
-        <div class="card-title">
-          <h2>Produtos</h2>
-        </div>
-        <div class="card-body">
-          <div id="products-root" data-event-id="{{ $event->id}}"></div>
-        </div>
-        </div>
+    <div class="col-6">
+      <div class="card">
+      <div class="card-title">
+        <h2>Produtos</h2>
       </div>
+      <div class="card-body">
+        <div id="products-root" data-event-id="{{ $event->id}}"></div>
+      </div>
+      </div>
+    </div>
     </div>
 
     <div class="row d-flex justify-content-center mt-5">
-      <div class="col-6">
-        <div class="card">
-        <div class="card-title">
-          <h2>Produção Local</h2>
-        </div>
-        <div class="card-body">
-          <div id="prodLocal-root" data-event-id="{{ $event->id}}"></div>
-        </div>
-        </div>
+    <div class="col-6">
+      <div class="card">
+      <div class="card-title">
+        <h2>Produção Local</h2>
       </div>
+      <div class="card-body">
+        <div id="prodLocal-root" data-event-id="{{ $event->id}}"></div>
+      </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="row mt-5 d-flex justify-content-center">
+    <div class="col-6 ">
+      <button type="submit" class="btn btn-lg btn-danger" data-bs-toggle="modal"
+      data-bs-target="#confirmDeleteModal-{{ $event->id }}">Remover evento</button>
+    </div>
     </div>
 
   </div>

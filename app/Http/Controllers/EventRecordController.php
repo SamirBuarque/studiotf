@@ -54,7 +54,8 @@ class EventRecordController extends Controller
     {
         $event = EventRecord::findOrFail($id);
         $plannings = $event->planning;
-        return view('event_record.detail', compact('event', 'plannings'));
+        $files = $event->file()->get();
+        return view('event_record.detail', compact('event', 'plannings', 'files'));
     }
 
     public function edit(EventRecord $eventRecord)
