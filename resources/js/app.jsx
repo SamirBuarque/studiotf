@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom/client';
 import PlanningsList from './components/PlanningsList';
 import ProductsList from './components/ProductsList';
 import ProdLocalList from './components/ProdLocalList';
+import EventStatus from './components/EventStatus';
 
 const el = document.getElementById('plannings-root');
 if (el) {
@@ -32,6 +33,16 @@ const prodLocalRoot = document.getElementById('prodLocal-root');
     ReactDOM.createRoot(prodLocalRoot).render(
     <React.StrictMode>
       <ProdLocalList eventId={eventId} />
+    </React.StrictMode>
+  );
+  }
+
+const eventStatusRoot = document.getElementById('event-status-root');
+  if (eventStatusRoot) {
+    const eventId = eventStatusRoot.dataset.eventId;
+    ReactDOM.createRoot(eventStatusRoot).render(
+    <React.StrictMode>
+      <EventStatus eventId={eventId} />
     </React.StrictMode>
   );
   }

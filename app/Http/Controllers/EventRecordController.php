@@ -81,4 +81,16 @@ class EventRecordController extends Controller
         $event->delete();
         return redirect()->route('index')->with('success', 'Evento removido com sucesso!');
     }
+
+    public function getStatus(EventRecord $eventRecord) {
+        $event = EventRecord::findOrFail($eventRecord->id);
+        return response()->json($event->status);
+    }
+
+    public function updateStatus(EventRecord $eventRecord, Request $request) {
+        $event = EventRecord::findOrFail($eventRecord->id);
+        $status = $request->input('status');
+        $event->status = $status;
+        $event->save();;
+    }
 }

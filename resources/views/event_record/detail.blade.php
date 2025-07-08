@@ -9,7 +9,7 @@
     <div class="row">
     <div class="d-flex align-items-center justify-content-center col-12 text-uppercase gap-3">
       <h1>{{$event->city}}</h1>
-      <span class="text-bold">{{$event->status}}</span>
+      <div id="event-status-root" data-event-id="{{ $event->id}}"></div>
     </div>
 
     <!-- Modal #confirmDeleteModal -->
@@ -149,7 +149,7 @@
     </div>
     </div>
 
-    <div class="row mt-5 d-flex justify-content-center">
+    <div class="row my-5 d-flex justify-content-center">
     <div class="col-6 ">
       <button type="submit" class="btn btn-lg btn-danger" data-bs-toggle="modal"
       data-bs-target="#confirmDeleteModal-{{ $event->id }}">Remover evento</button>

@@ -8,7 +8,10 @@ use App\Http\Controllers\Api\ProductsController;
 use App\Http\Controllers\Api\WorkersController;
 use App\Http\Controllers\FileController;
 
+//Eventos
 Route::get('/events', [EventRecordController::class, 'index']);
+Route::get('/events/{eventRecord}/status', [EventRecordController::class, 'getStatus'])->name('event.status');
+Route::post('/events/{eventRecord}/status', [EventRecordController::class, 'updateStatus'])->name('event.update.status');
 
 Route::get('/user', function (Request $request) {
     return $request->user();
