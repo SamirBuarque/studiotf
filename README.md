@@ -30,3 +30,15 @@ Esse sistema permite:
 - [Backblaze B2](https://www.backblaze.com/b2/cloud-storage.html) — armazenamento de arquivos na nuvem (PDF, PNG, DOCX etc.)
 
 ---
+
+📈 Futuras melhorias (To Do)
+
+- Exportação de relatórios em PDF
+
+- Dashboard com gráficos de eventos e recursos utilizados
+
+- Integração com Google Calendar
+
+- Controle de permissões por tipo de usuário
+
+---
