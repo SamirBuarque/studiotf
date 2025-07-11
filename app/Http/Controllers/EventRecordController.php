@@ -60,7 +60,7 @@ class EventRecordController extends Controller
 
     public function edit(EventRecord $eventRecord)
     {
-        //
+        return view('event_record.edit', compact("eventRecord"));
     }
 
     /**

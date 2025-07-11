@@ -17,11 +17,14 @@ Route::middleware(['auth'])->group(function () {
 
   Route::post('/logout', [UserController::class,'logout'])->name('user.logout');
 
+  // EVENTOS
   Route::get('/evento/detalhamento/{id}', [EventRecordController::class, 'show'])->name('detail');
   Route::get('/evento/adicionar', [EventRecordController::class, 'create'])->name('event.create');
   Route::post('/evento/adicionar', [EventRecordController::class, 'store'])->name('event.store');
   Route::delete('/evento/remover/{eventRecord}', [EventRecordController::class, 'destroy'])->name('event.destroy');
+  Route::get('/evento/editar/{eventRecord}', [EventRecordController::class, 'edit'])->name('event.edit');
 
+  //TRABALHADORES
   Route::get('/trabalhador', [WorkersController::class, 'index'])->name('worker.index');
   Route::get('/trabalhador/adicionar', [WorkersController::class, 'create'])->name('worker.create');
   Route::get('/trabalhador/editar/{worker}', [WorkersController::class, 'edit'])->name('worker.edit');

@@ -31,7 +31,7 @@
             <label for="birth_date" class="form-label">Data de nascimento</label>
           </div>
           <div class="mb-3 form-outline">
-            <input type="text" name="position" id="position" class="form-control" value={{$worker->position}}>
+            <input type="text" name="position" id="position" class="form-control" value="{{$worker->position}}">
             <label for="position" class="form-label">Função</label>
           </div>
           <button type="submit" class="btn btn-primary">Salvar</button>

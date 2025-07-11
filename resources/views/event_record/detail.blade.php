@@ -150,9 +150,14 @@
     </div>
 
     <div class="row my-5 d-flex justify-content-center">
-    <div class="col-6 ">
+    <div class="col-6 d-flex justify-content-center gap-4">
       <button type="submit" class="btn btn-lg btn-danger" data-bs-toggle="modal"
-      data-bs-target="#confirmDeleteModal-{{ $event->id }}">Remover evento</button>
+      data-bs-target="#confirmDeleteModal-{{ $event->id }}">Excluir evento</button>
+      <a href="{{ route('event.edit', ['eventRecord' => $event]) }}" class="btn btn-lg btn-warning">
+        <div class="d-flex align-items-center gap-3">
+          <i class="fa-solid fa-pen-to-square"></i><span>Editar Dados do Evento</span>
+        </div>
+      </a>
     </div>
     </div>
 

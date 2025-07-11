@@ -19,9 +19,9 @@
     <div class="row mb-3 d-flex justify-content-center align-items-center">
     @foreach($events as $event)
 
-    <div class="col-8 mb-4 event-card">
+    <div class="col-8 mb-4">
       <a class="unstyled-link" href="{{route('detail', $event->id)}}">
-      <div class="card w-100">
+      <div class="card w-100 card-hover">
       <div class="card-body">
       <div class="card-title d-flex align-items-center justify-content-center">
         <h2>{{$event->city}}</h2>
