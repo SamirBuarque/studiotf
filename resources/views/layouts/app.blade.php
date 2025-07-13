@@ -18,13 +18,6 @@
   @vite(['resources/css/app.css', 'resources/js/app.jsx'])
   @vite('resources/js/estado_cidade.js')
   <title>StudioTF - @yield('title')</title>
-
-  <style>
-    body {
-      background-color: #2a2f35;
-      color: #ffffff
-    }
-  </style>
 </head>
 
 <body class="d-flex flex-column min-vh-100">

@@ -1,3 +1,8 @@
+body {
+  background: linear-gradient(to top, #2a2f35, #8e9ba7);
+  color: #ffffff
+}
+
 .unstyled-link {
   color: inherit;
   text-decoration: none;
@@ -12,4 +17,12 @@
   transform: translateY(-5px);
   transition: transform 0.3s ease, box-shadow 0.2s ease;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-dark {
+  background-color: #4a525a;
+}
+
+.footer-dark {
+  background-color: #1f2328;
 }

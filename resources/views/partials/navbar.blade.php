@@ -1,4 +1,4 @@
-<nav class="navbar bg-dark">
+<nav class="navbar navbar-dark">
   <div class="d-flex align-items-center justify-content-between w-100 mx-3">
     <div class="d-flex align-items-center justify-content-start gap-3">
       <a class="navbar-brand text-white" href="{{route('index')}}">StudioTF</a>
@@ -6,6 +6,12 @@
         <div class="d-flex align-items-center gap-2">
           <i class="fa-solid fa-users"></i>
           <span>Funcionários</span>
+        </div>
+      </a>
+      <a class="text-white text-decoration-none" href="{{ route('inventory.index') }}">
+        <div class="d-flex align-items-center gap-2">
+          <i class="fa-solid fa-clipboard-list"></i>
+          <span>Inventário</span>
         </div>
       </a>
     </div>

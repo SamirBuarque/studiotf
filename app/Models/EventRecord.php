@@ -44,4 +44,9 @@ class EventRecord extends Model
     public function file() {
         return $this->hasMany(File::class);
     }
+    public function inventory() {
+        return $this->belongsToMany(EventRecord::class, 'events_inventory')
+            ->withPivot('reserved')
+            ->withTimestamps();
+    }
 }

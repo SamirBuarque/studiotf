@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\PlanningController;
+use App\Http\Controllers\Api\InventoryController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventRecordController;
@@ -39,3 +40,7 @@ Route::post('/{eventRecord}/files/upload', [FileController::class, 'upload'])->n
 Route::get('/{eventRecord}/files/view/{fileId}', [FileController::class, 'view'])->name('file.view');
 Route::delete('/{eventRecord}/files/{file}', [FileController::class, 'destroy'])->name('file.destroy');
 
+//Inventario
+Route::get('/inventory', [InventoryController::class, 'index'])->name('inventory.index');
+Route::delete('/inventory/{id}', [InventoryController::class, 'delete'])->name('inventory.delete');
+Route::put('/inventory/{inventory}', [InventoryController::class, 'update'])->name('inventory.update');

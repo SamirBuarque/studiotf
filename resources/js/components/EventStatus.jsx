@@ -37,8 +37,8 @@ export default function EventStatus({ eventId }) {
 
   return (
 
-    <div className="col-3">
-      <select className="form-select-lg px-3" value={status} onChange={handleSelect}>
+    <div className="col-2">
+      <select className="form-select-lg px-2" value={status} onChange={handleSelect}>
         {statusOptions.map(option => (
           <option key={option} value={option}>
             {option}

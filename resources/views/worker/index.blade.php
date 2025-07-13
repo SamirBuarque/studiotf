@@ -4,7 +4,7 @@
 
 @section('content')
 
-  <div class="row d-flex align-items-center justify-content-center mt-4">
+  <div class="row d-flex align-items-center justify-content-center my-4">
 
     <div class="col-8">
     <div class="d-flex align-items-center justify-content-center">
@@ -17,7 +17,7 @@
     </div>
     <ul class="list-group">
       @foreach($workers as $worker)
-      <li class="list-group-item d-flex justify-content-between align-items-center">
+      <li class="list-group-item d-flex justify-content-between align-items-center py-3">
       <div class="">
       <strong>{{$worker->eventRecord?->name ?? 'Sem evento vinculado'}}</strong> -
       {{$worker->name}} -

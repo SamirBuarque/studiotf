@@ -6,6 +6,7 @@ import PlanningsList from './components/PlanningsList';
 import ProductsList from './components/ProductsList';
 import ProdLocalList from './components/ProdLocalList';
 import EventStatus from './components/EventStatus';
+import Inventory from './components/Inventory';
 
 const el = document.getElementById('plannings-root');
 if (el) {
@@ -47,3 +48,12 @@ const eventStatusRoot = document.getElementById('event-status-root');
   );
   }
 
+const inventoryRoot = document.getElementById('inventory-root');
+  if (inventoryRoot) {
+    ReactDOM.createRoot(inventoryRoot).render(
+    <React.StrictMode>
+      <Inventory createUrl={window.laravelRoutes.createInventoryUrl} 
+        editUrl={window.laravelRoutes.createInventoryEditUrl}/>
+    </React.StrictMode>
+  );
+  }

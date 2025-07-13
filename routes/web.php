@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InventoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventRecordController;
@@ -31,5 +32,12 @@ Route::middleware(['auth'])->group(function () {
   Route::post('/trabalhador/adicionar', [WorkersController::class, 'store'])->name('worker.store');
   Route::put('/trabalhador/editar/{worker}', [WorkersController::class, 'update'])->name('worker.update');
   Route::delete('/trabalhador/deletar/{worker}', [WorkersController::class, 'destroy'])->name('worker.delete');
+
+  //INVENTARIO
+  Route::get('/inventario', [InventoryController::class, 'index'])->name('inventory.index');
+  Route::get('/inventario/adicionar', [InventoryController::class, 'create'])->name('inventory.create');
+  Route::post('/inventario/adicionar', [InventoryController::class, 'store'])->name('inventory.store');
+  Route::get('/inventario/editar/{inventory}', [InventoryController::class, 'edit'])->name('inventory.edit');
+
 });
 

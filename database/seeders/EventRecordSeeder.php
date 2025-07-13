@@ -18,36 +18,36 @@ class EventRecordSeeder extends Seeder
 
         EventRecord::factory()->create([
             "name" => "Arraia da vila",
-            "city" => "sao miguel dos milagres",
-            "state" => "alagoas",
+            "city" => "São Miguel dos Milagres",
+            "state" => "Alagoas",
             "date" => Carbon::create(2025, 06, 16),
             "status" => "Produção Local"
         ]);
         EventRecord::factory()->create([
             "name" => "Semana santa",
-            "city" => "porto real do colegio",
-            "state" => "alagoas",
+            "city" => "Porto Real do Colégio",
+            "state" => "Alagoas",
             "date" => Carbon::create(2025, 03, 17),
             "status" => "Entregue"
         ]);
         EventRecord::factory()->create([
             "name" => "Carnaval de atalaia",
             "city" => "Atalaia",
-            "state" => "alagoas",
+            "state" => "Alagoas",
             "date" => Carbon::create(2026, 01, 15),
             "status" => "Planejamento"
         ]);
         EventRecord::factory()->create([
             "name" => "Festival de inverno",
-            "city" => "mar vermelho",
-            "state" => "alagoas",
+            "city" => "Mar Vermelho",
+            "state" => "Alagoas",
             "date" => Carbon::create(2026, 02, 21),
             "status" => "Planejamento"
         ]);
         EventRecord::factory()->create([
             "name" => "Reveilon",
-            "city" => "matriz de camaragibe",
-            "state" => "alagoas",
+            "city" => "Matriz de Camaragibe",
+            "state" => "Alagoas",
             "date" => Carbon::create(2025, 12, 24),
             "status" => "Produção Fábrica"
         ]);
