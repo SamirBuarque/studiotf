@@ -26,3 +26,11 @@ body {
 .footer-dark {
   background-color: #1f2328;
 }
+
+.guest-footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+

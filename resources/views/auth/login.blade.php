@@ -8,7 +8,10 @@
     <div class="row w-100 justify-content-center">
       <div class="col-md-6 col-lg-4">
       <div class="card shadow">
-        <h2 class="card-title text-center mt-3">Login</h2>
+        <div class="card-title text-center mt-3">
+          <h2 class="">StudioTF</h2>
+          <h2>Gerenciador de eventos</h2>
+        </div>
         <div class="card-body">
         <form action="{{ route('login') }}" method="post">
           @csrf
