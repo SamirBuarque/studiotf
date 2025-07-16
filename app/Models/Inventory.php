@@ -13,9 +13,17 @@ class Inventory extends Model
         'total_quantity'
     ];
 
+    protected $appends = ['available_quantity'];
+
     public function eventRecord() {
         return $this->belongsToMany(EventRecord::class, 'events_inventory')
             ->withPivot('reserved')
             ->withTimestamps();
+    }
+
+    public function getAvailableQuantityAttribute() {
+        $total = $this->total_quantity;
+        $reserved = $this->eventRecord()->sum('reserved');
+        return $total - $reserved;
     }
 }

@@ -19,7 +19,7 @@ Route::middleware(['auth'])->group(function () {
   Route::post('/logout', [UserController::class,'logout'])->name('user.logout');
 
   // EVENTOS
-  Route::get('/evento/detalhamento/{id}', [EventRecordController::class, 'show'])->name('detail');
+  Route::get('/evento/detalhamento/{id}', [EventRecordController::class, 'show'])->name('event.detail');
   Route::get('/evento/adicionar', [EventRecordController::class, 'create'])->name('event.create');
   Route::post('/evento/adicionar', [EventRecordController::class, 'store'])->name('event.store');
   Route::delete('/evento/remover/{eventRecord}', [EventRecordController::class, 'destroy'])->name('event.destroy');

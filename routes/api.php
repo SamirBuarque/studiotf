@@ -44,3 +44,6 @@ Route::delete('/{eventRecord}/files/{file}', [FileController::class, 'destroy'])
 Route::get('/inventory', [InventoryController::class, 'index'])->name('inventory.index');
 Route::delete('/inventory/{id}', [InventoryController::class, 'delete'])->name('inventory.delete');
 Route::put('/inventory/{inventory}', [InventoryController::class, 'update'])->name('inventory.update');
+Route::post('/inventory', [InventoryController::class, 'store'])->name('inventory.store');
+Route::get('/{eventRecord}/inventory', [InventoryController::class, 'linkedInventory'])->name('inventory.linked-inventory');
+Route::post('/unlink-inventory', [InventoryController::class, 'unlinkInventory'])->name('inventory.unlink-inventory');
