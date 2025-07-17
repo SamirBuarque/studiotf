@@ -2,6 +2,10 @@
 
 @section('title', 'Criar Evento')
 
+@section('breadcrumbs')
+  {{ Breadcrumbs::render('event.edit', $eventRecord) }}
+@endsection
+
 @section('content')
 
   <div class="row d-flex justify-content-center align-items-center mb-3">

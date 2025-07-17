@@ -2,6 +2,10 @@
 
 @section('title', 'Inventário')
 
+@section('breadcrumbs')
+  {{ Breadcrumbs::render('inventory.index') }}
+@endsection
+
 @section('content')
 
   <div class="col mt-3">

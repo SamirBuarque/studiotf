@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('title', 'Editar trabalhador')
-
+@section('breadcrumbs')
+  {{ Breadcrumbs::render('worker.edit', $worker) }}
+@endsection
 
 @section('content')
 

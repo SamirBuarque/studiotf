@@ -2,6 +2,10 @@
 
 @section('title', 'Detalhes do Evento')
 
+@section('breadcrumbs')
+  {{ Breadcrumbs::render('event.detail', $event->id) }}
+@endsection
+
 @section('content')
 
   <div class="text-center mt-3">

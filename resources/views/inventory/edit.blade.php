@@ -2,6 +2,9 @@
 
 @section('title', 'Editar Inventário')
 
+@section('breadcrumbs')
+  {{ Breadcrumbs::render('inventory.edit', $inventory) }}
+@endsection
 
 @section('content')
 

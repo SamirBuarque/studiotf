@@ -2,6 +2,9 @@
 
 @section('title', 'Adicionar trabalhador')
 
+@section('breadcrumbs')
+  {{ Breadcrumbs::render('worker.create') }}
+@endsection
 
 @section('content')
 

@@ -2,6 +2,9 @@
 
 @section('title', 'Adicionar Inventário')
 
+@section('breadcrumbs')
+  {{ Breadcrumbs::render('inventory.create') }}
+@endsection
 
 @section('content')
 

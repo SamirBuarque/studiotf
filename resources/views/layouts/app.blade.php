@@ -22,6 +22,9 @@
 <body class="d-flex flex-column min-vh-100">
 
   @include('partials.navbar')
+  <div class="container">
+    @yield('breadcrumbs')
+  </div>
 
   <main class="flex-fill">
     <div class="container">

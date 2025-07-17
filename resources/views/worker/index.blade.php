@@ -2,7 +2,13 @@
 
 @section('title', 'Trabalhador')
 
+@section('breadcrumbs')
+  {{ Breadcrumbs::render('worker.index') }}
+@endsection
+
 @section('content')
+
+
 
   <div class="row d-flex align-items-center justify-content-center my-4">
 
