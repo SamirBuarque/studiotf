@@ -81,7 +81,7 @@ export default function Inventory({ createUrl, editUrl }) {
             <th scope="col"><h4>Nome</h4></th>
             <th scope="col"><h4>Categoria</h4></th>
             <th scope="col"><h4>Quantidade Total</h4></th>
-            <th colSpan={2}>Ações</th>
+            <th colSpan={2}><h4>Ações</h4></th>
           </tr>
         </thead>
         <tbody>

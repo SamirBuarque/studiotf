@@ -5,7 +5,6 @@
 @section('content')
 
   <div class="col mt-3">
-    <h1>Mensagem: {{ session('success') }}</h1>
     <div class="d-flex align-items-center justify-content-center">
     @if (session('success'))
     <div class="text-center alert alert-success alert-dismissible fade show" role="alert">

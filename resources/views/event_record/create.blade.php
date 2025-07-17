@@ -55,6 +55,6 @@
     </div>
   </div>
 
-  <script srt></script>
+  <script src="{{ asset('/js/estado_cidade.js')}}"></script>
 
 @endsection
